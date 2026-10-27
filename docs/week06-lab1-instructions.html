@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>week06-lab1-instructions.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="week-6-lab-1-implement-clean-architecture">Week 6 Lab 1: Implement Clean Architecture</h1>
+<h2 id="purpose">Purpose</h2>
+<p>In Week 5, the application gained relational and document persistence. In this lab, you will refactor one existing use case into a Clean Architecture structure.</p>
+<p>The main architectural rule is the <strong>Dependency Rule</strong>:</p>
+<pre class="hljs"><code><div>Source-code dependencies point towards Business and Domain
+</div></code></pre>
+<p>You will implement the same use case through two incoming adapters:</p>
+<ul>
+<li>MVC and Razor</li>
+<li>REST and JSON</li>
+</ul>
+<p>Both adapters will invoke the same Business use case and use the same Business-owned persistence gateway.</p>
+<h2 id="core-scope">Core Scope</h2>
+<p>This two-hour core lab focuses only on:</p>
+<pre class="hljs"><code><div>W5-UC01: View Student Enrolments
+</div></code></pre>
+<p>Use the existing description in:</p>
+<pre class="hljs"><code><div>week05-lab1-use-cases.md
+</div></code></pre>
+<p>Preserve its:</p>
+<ul>
+<li>Primary actor.</li>
+<li>Main success scenario.</li>
+<li><strong>No Enrolments Found</strong> alternative flow.</li>
+<li>Earliest-to-latest ordering rule.</li>
+<li>Required display fields.</li>
+<li>Read-only postconditions.</li>
+</ul>
+<p>The independent refactoring of:</p>
+<pre class="hljs"><code><div>W5-UC04: Record Research Activity
+</div></code></pre>
+<p>is an extension task. It is not required for core completion within the two-hour session.</p>
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By completing the core lab, you should be able to:</p>
+<ul>
+<li>Implement one use case across Domain, Business, Persistence, Web, API, and Application projects.</li>
+<li>Use an input port and a Business-owned output port to preserve the Dependency Rule.</li>
+<li>Separate Domain entities, Business DTOs, persistence records, MVC view models, and API response models.</li>
+<li>Invoke the same Business use case through MVC and REST adapters.</li>
+</ul>
+<h2 id="files-and-projects-required">Files and Projects Required</h2>
+<p>Before starting, make sure you have:</p>
+<ul>
+<li>Your implementation of week 5.</li>
+<li>The supplied Week 6 starter solution.</li>
+<li><code>week05-lab1-use-cases.md</code>.</li>
+<li><code>week06-lab1-initial-class-diagram.md</code>.</li>
+</ul>
+<p>The supplied starter already contains the project scaffold:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.sln
+├── PgrStudentManagement.Domain/
+├── PgrStudentManagement.Business/
+├── PgrStudentManagement.Adapters.Persistence/
+├── PgrStudentManagement.Adapters.Web/
+├── PgrStudentManagement.Adapters.API/
+├── PgrStudentManagement.Application/
+└── PgrStudentManagement.Tests/
+</div></code></pre>
+<p>It also contains the required project references and basic host configuration.</p>
+<p>You do not need to recreate the projects during the core lab.</p>
+<h2 id="about-the-initial-class-diagram">About the Initial Class Diagram</h2>
+<p>The supplied class diagram provides an architectural starting point for <code>W5-UC01</code>.</p>
+<p>It intentionally does not define every final property, mapping decision, method signature, or implementation relationship.</p>
+<p>Use it to identify:</p>
+<ul>
+<li>The project responsible for each class.</li>
+<li>The input port used by incoming adapters.</li>
+<li>The output port required by Business.</li>
+<li>The direction of source-code dependencies.</li>
+<li>The separation between Domain, persistence, MVC, and API models.</li>
+</ul>
+<p>During Lab 2, you will revise and complete the diagram so that it represents your actual implementation.</p>
+<h1 id="part-1-verify-the-starter">Part 1: Verify the Starter</h1>
+<h2 id="task-1-inspect-and-build-the-six-project-scaffold">Task 1: Inspect and Build the Six-Project Scaffold</h2>
+<p>From the solution directory, run:</p>
+<pre class="hljs"><code><div>dotnet sln list
+dotnet restore
+dotnet build
+</div></code></pre>
+<p>Confirm that the solution contains:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Domain
+PgrStudentManagement.Business
+PgrStudentManagement.Adapters.Persistence
+PgrStudentManagement.Adapters.Web
+PgrStudentManagement.Adapters.API
+PgrStudentManagement.Application
+PgrStudentManagement.Tests
+</div></code></pre>
+<p>Inspect the project references and verify the dependencies direction:</p>
+<pre class="hljs"><code><div>Business
+    -&gt; Domain
+
+Persistence
+    -&gt; Business
+    -&gt; Domain
+
+Web
+    -&gt; Business
+
+API
+    -&gt; Business
+
+Application
+    -&gt; Business
+    -&gt; Persistence
+    -&gt; Web
+    -&gt; API
+</div></code></pre>
+<p>A Web or API reference to Domain is permitted only where the implemented adapter genuinely requires a Domain type. Do not add unnecessary project references.</p>
+<p>Confirm that these references do not exist:</p>
+<pre class="hljs"><code><div>Business -&gt; Persistence
+Business -&gt; Web
+Business -&gt; API
+Web -&gt; Persistence
+API -&gt; Persistence
+Web -&gt; API
+API -&gt; Web
+</div></code></pre>
+<p>Run the scaffolded host:</p>
+<pre class="hljs"><code><div>dotnet run --project PgrStudentManagement.Application
+</div></code></pre>
+<p>Confirm that <code>PgrStudentManagement.Application</code> is the only executable host.</p>
+<p>Create a checkpoint before changing the code:</p>
+<pre class="hljs"><code><div>git status
+git add .
+git commit -m <span class="hljs-string">&quot;Preserve Week 6 starter scaffold&quot;</span>
+</div></code></pre>
+<h1 id="part-2-implement-the-domain-and-business-layers">Part 2: Implement the Domain and Business Layers</h1>
+<h2 id="task-2-create-or-move-the-domain-enrolment-model">Task 2: Create or Move the Domain Enrolment Model</h2>
+<p>In the Domain project, create or complete:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Domain/
+└── Students/
+    ├── Student.cs
+    ├── Enrolment.cs
+    └── EnrolmentStatus.cs
+</div></code></pre>
+<p>The Domain classes represent business concepts. They must not contain:</p>
+<ul>
+<li>Entity Framework Core attributes.</li>
+<li>MongoDB or BSON attributes.</li>
+<li>MVC validation attributes.</li>
+<li>JSON serialization attributes.</li>
+<li><code>DbContext</code> or <code>DbSet&lt;T&gt;</code> references.</li>
+<li>Controller, view, API, or persistence-record references.</li>
+</ul>
+<p>A representative <code>Enrolment</code> is:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">namespace</span> <span class="hljs-title">PgrStudentManagement.Domain.Students</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Enrolment</span>
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> EnrolmentId { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">init</span>; }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> StudentNumber { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">init</span>; } = <span class="hljs-built_in">string</span>.Empty;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> ProgrammeCode { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">init</span>; } = <span class="hljs-built_in">string</span>.Empty;
+
+    <span class="hljs-keyword">public</span> DateTime StartDate { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">init</span>; }
+
+    <span class="hljs-keyword">public</span> DateTime? ExpectedEndDate { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">init</span>; }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> ModeOfStudy { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">init</span>; } = <span class="hljs-built_in">string</span>.Empty;
+
+    <span class="hljs-keyword">public</span> EnrolmentStatus Status { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">init</span>; }
+}
+</div></code></pre>
+<p>The example and supplied diagram show only the properties relevant to the guided use case. Do not remove existing Student state or behaviour required by earlier use cases.</p>
+<p>If the implementation stores only <code>StudentNumber</code> on <code>Enrolment</code>, model that identifier-based relationship accurately. Do not add a <code>Student.Enrolments</code> collection unless the Domain design for your implementation genuinely uses it.</p>
+<p>Build the Domain project:</p>
+<pre class="hljs"><code><div>dotnet build PgrStudentManagement.Domain
+</div></code></pre>
+<h2 id="task-3-create-the-business-output-port">Task 3: Create the Business Output Port</h2>
+<p>Create:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Business/
+└── Students/
+    └── Gateway/
+        └── IEnrolmentGateway.cs
+</div></code></pre>
+<p>Add:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">using</span> PgrStudentManagement.Domain.Students;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">PgrStudentManagement.Business.Students.Gateway</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title">IEnrolmentGateway</span>
+{
+    Task&lt;IReadOnlyList&lt;Enrolment&gt;&gt; GetForStudentAsync(
+            <span class="hljs-built_in">string</span> studentNumber,
+            CancellationToken cancellationToken);
+}
+</div></code></pre>
+<p><code>IEnrolmentGateway</code> is an <strong>output port</strong>.</p>
+<p>It expresses the external data capability required by Business. It belongs to Business because the use case owns that requirement.</p>
+<p>The interface must not mention:</p>
+<ul>
+<li>EF Core.</li>
+<li><code>DbContext</code>.</li>
+<li>Persistence records.</li>
+<li>SQLite.</li>
+<li>MongoDB.</li>
+<li>MVC or API types.</li>
+</ul>
+<h2 id="task-4-create-the-business-input-port-and-dtos">Task 4: Create the Business Input Port and DTOs</h2>
+<p>Create:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Business/
+└── Students/
+    └── ViewStudentEnrolments/
+        ├── IViewStudentEnrolmentsUseCase.cs
+        ├── ViewStudentEnrolmentsUseCase.cs
+        ├── ViewStudentEnrolmentsInput.cs
+        ├── EnrolmentOutput.cs
+        └── StudentEnrolmentsOutput.cs
+</div></code></pre>
+<p>Use-case DTOs contain simple data crossing the Business boundary.</p>
+<p>A possible input DTO is:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">namespace</span> <span class="hljs-title">PgrStudentManagement.Business.Students.ViewStudentEnrolments</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">record</span> <span class="hljs-title">ViewStudentEnrolmentsInput</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> StudentNumber</span>)</span>;
+</div></code></pre>
+<p>A possible output structure is:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">record</span> <span class="hljs-title">EnrolmentOutput</span>(<span class="hljs-params">
+    <span class="hljs-built_in">string</span> ProgrammeCode,
+    DateTime StartDate,
+    DateTime? ExpectedEndDate,
+    <span class="hljs-built_in">string</span> ModeOfStudy,
+    <span class="hljs-built_in">string</span> Status</span>)</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">record</span> <span class="hljs-title">StudentEnrolmentsOutput</span>(<span class="hljs-params">
+    <span class="hljs-built_in">string</span> StudentNumber,
+    IReadOnlyList&lt;EnrolmentOutput&gt; Enrolments</span>)</span>;
+</div></code></pre>
+<p>Create the input port:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title">IViewStudentEnrolmentsUseCase</span>
+{
+    <span class="hljs-function">Task&lt;StudentEnrolmentsOutput&gt; <span class="hljs-title">ExecuteAsync</span>(<span class="hljs-params">
+        ViewStudentEnrolmentsInput input,
+        CancellationToken cancellationToken</span>)</span>;
+}
+</div></code></pre>
+<p><code>IViewStudentEnrolmentsUseCase</code> is an <strong>input port</strong>. It defines how MVC and REST adapters invoke the use case.</p>
+<p>Do not add the following to Business DTOs:</p>
+<ul>
+<li>MVC display or validation attributes.</li>
+<li>EF Core attributes.</li>
+<li>BSON attributes.</li>
+<li>HTTP status codes.</li>
+<li>Razor-specific formatting.</li>
+</ul>
+<h2 id="task-5-implement-and-test-the-business-use-case">Task 5: Implement and Test the Business Use Case</h2>
+<p>Implement <code>ViewStudentEnrolmentsUseCase</code> using constructor injection of <code>IEnrolmentGateway</code>.</p>
+<p>The use case should:</p>
+<ol>
+<li>Receive <code>ViewStudentEnrolmentsInput</code>.</li>
+<li>Call <code>IEnrolmentGateway</code>.</li>
+<li>Order matching Enrolments from earliest to latest <code>StartDate</code>.</li>
+<li>Map Domain Enrolments to Business output DTOs.</li>
+<li>Return an empty Enrolments collection for the supplied <strong>No Enrolments Found</strong> flow.</li>
+<li>Avoid modifying any Student or Enrolment information.</li>
+</ol>
+<p>The chronological ordering rule belongs to the Business use case because it is observable use-case behaviour.</p>
+<p>The persistence gateway may also order its database query for efficiency, but the use case must remain correct if a gateway returns records in a different order.</p>
+<p>Add the required test references if they are not already present:</p>
+<pre class="hljs"><code><div>dotnet add PgrStudentManagement.Tests \
+    reference PgrStudentManagement.Business
+
+dotnet add PgrStudentManagement.Tests reference PgrStudentManagement.Domain
+</div></code></pre>
+<p>Create:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Tests/
+├── TestDoubles/
+│   └── FakeEnrolmentGateway.cs
+└── Business/
+    └── ViewStudentEnrolmentsUseCaseTests.cs
+</div></code></pre>
+<p>The fake gateway should implement <code>IEnrolmentGateway</code> without EF Core or SQLite.</p>
+<p>Add test cases for:</p>
+<ul>
+<li>Matching Enrolments are returned.</li>
+<li>Unrelated Enrolments are excluded.</li>
+<li>Results are ordered from earliest to latest even when the fake returns an unsorted collection.</li>
+<li>A Student with no Enrolments produces an empty output collection.</li>
+<li>Viewing Enrolments does not modify the fake data.</li>
+</ul>
+<p>Run:</p>
+<pre class="hljs"><code><div>dotnet <span class="hljs-built_in">test</span>
+</div></code></pre>
+<p>These Business tests must not require:</p>
+<ul>
+<li>EF Core.</li>
+<li>SQLite.</li>
+<li>ASP.NET Core MVC.</li>
+<li>A running web server.</li>
+</ul>
+<h1 id="part-3-implement-the-relational-persistence-adapter">Part 3: Implement the Relational Persistence Adapter</h1>
+<h2 id="task-6-create-the-ef-records-and-persistence-mapper">Task 6: Create the EF Records and Persistence Mapper</h2>
+<p>In the Persistence Adapter, create or move:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Adapters.Persistence/
+└── Relational/
+    ├── Models/
+    │   ├── StudentRecord.cs
+    │   └── EnrolmentRecord.cs
+    ├── Configurations/
+    ├── Mappers/
+    │   └── EnrolmentPersistenceMapper.cs
+    ├── Gateway/
+    │   └── EfEnrolmentGateway.cs
+    └── StudentManagementDbContext.cs
+</div></code></pre>
+<p>The Week 6 starter should already contain the selected .NET 8-compatible package versions. Do not upgrade the EF Core packages to a different major version.</p>
+<p>If a package must be restored manually, use the same <code>8.0.x</code> patch version already selected for every EF Core package in the solution.</p>
+<p>The persistence records represent the relational schema. They may contain:</p>
+<ul>
+<li>Primary keys.</li>
+<li>Foreign keys.</li>
+<li>EF navigation properties.</li>
+<li>EF configuration.</li>
+<li>Database-specific details.</li>
+</ul>
+<p>They are not Domain entities.</p>
+<p>Create a read mapper containing only the operation required by the guided use case:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> Enrolment <span class="hljs-title">ToDomain</span>(<span class="hljs-params">EnrolmentRecord <span class="hljs-keyword">record</span></span>)</span>
+{
+    <span class="hljs-comment">// Map the EF record to the Domain entity.</span>
+}
+</div></code></pre>
+<p>Do not add a <code>ToRecord</code> operation unless another implemented use case requires it.</p>
+<p>Preserve the existing table and column names. Configure records explicitly where necessary, for example:</p>
+<pre class="hljs"><code><div>modelBuilder.Entity&lt;StudentRecord&gt;()
+    .ToTable(<span class="hljs-string">&quot;Student&quot;</span>);
+
+modelBuilder.Entity&lt;EnrolmentRecord&gt;()
+    .ToTable(<span class="hljs-string">&quot;Enrolment&quot;</span>);
+</div></code></pre>
+<p>Also preserve existing keys, foreign keys, indexes, nullability, and enum conversions.</p>
+<h2 id="task-7-implement-the-ef-gateway">Task 7: Implement the EF Gateway</h2>
+<p>Implement:</p>
+<pre class="hljs"><code><div>EfEnrolmentGateway : IEnrolmentGateway
+</div></code></pre>
+<p>The gateway should:</p>
+<ol>
+<li>Query <code>EnrolmentRecord</code> objects using <code>StudentManagementDbContext</code>.</li>
+<li>Use <code>AsNoTracking()</code> because the use case is read-only.</li>
+<li>Filter using the supplied student number.</li>
+<li>Order by <code>StartDate</code> for query efficiency.</li>
+<li>Map every persistence record to a Domain <code>Enrolment</code>.</li>
+<li>Return an empty list when no records match.</li>
+</ol>
+<p>A representative implementation is:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">async</span> Task&lt;IReadOnlyList&lt;Enrolment&gt;&gt;
+    GetForStudentAsync(
+        <span class="hljs-built_in">string</span> studentNumber,
+        CancellationToken cancellationToken)
+{
+    <span class="hljs-keyword">var</span> records = <span class="hljs-keyword">await</span> _context.Enrolments
+        .AsNoTracking()
+        .Where(<span class="hljs-keyword">record</span> =&gt;
+            <span class="hljs-keyword">record</span>.StudentNumber == studentNumber)
+        .OrderBy(<span class="hljs-keyword">record</span> =&gt; <span class="hljs-keyword">record</span>.StartDate)
+        .ToListAsync(cancellationToken);
+
+    <span class="hljs-keyword">return</span> records
+        .Select(_mapper.ToDomain)
+        .ToList();
+}
+</div></code></pre>
+<p>The runtime call reaches <code>EfEnrolmentGateway</code>, but Business has a source-code dependency only on <code>IEnrolmentGateway</code>.</p>
+<h3 id="verify-the-existing-database-mapping">Verify the Existing Database Mapping</h3>
+<p>The Persistence Adapter contains the <code>DbContext</code> and migrations. The Application project supplies startup configuration and the connection string.</p>
+<p>If the starter already runs against the existing Week 5 database, do not create a new migration unnecessarily.</p>
+<p>If a migration is required, use:</p>
+<pre class="hljs"><code><div>dotnet ef migrations add CleanArchitectureMapping \
+    --project PgrStudentManagement.Adapters.Persistence \
+    --startup-project PgrStudentManagement.Application
+</div></code></pre>
+<p>Apply migrations using:</p>
+<pre class="hljs"><code><div>dotnet ef database update \
+    --project PgrStudentManagement.Adapters.Persistence \
+    --startup-project PgrStudentManagement.Application
+</div></code></pre>
+<p>Before applying a generated migration, inspect it. Do not apply a migration that unintentionally drops and recreates the existing Student or Enrolment tables.</p>
+<h1 id="part-4-implement-the-incoming-adapters">Part 4: Implement the Incoming Adapters</h1>
+<h2 id="task-8-implement-the-mvc-and-razor-adapter">Task 8: Implement the MVC and Razor Adapter</h2>
+<p>In the Razor Class Library, create or complete:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Adapters.Web/
+├── Controllers/
+│   └── StudentsController.cs
+├── ViewModels/
+│   ├── StudentEnrolmentsViewModel.cs
+│   └── EnrolmentViewModel.cs
+├── Mappers/
+│   └── StudentEnrolmentsWebMapper.cs
+└── Views/
+    └── Students/
+        └── Enrolments.cshtml
+</div></code></pre>
+<p>The MVC controller depends on:</p>
+<pre class="hljs"><code><div>IViewStudentEnrolmentsUseCase
+StudentEnrolmentsWebMapper
+</div></code></pre>
+<p>It must not depend on:</p>
+<ul>
+<li><code>StudentManagementDbContext</code>.</li>
+<li><code>EfEnrolmentGateway</code>.</li>
+<li>EF persistence records.</li>
+<li>The API adapter.</li>
+</ul>
+<p>The controller action should be asynchronous:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">async</span> Task&lt;IActionResult&gt; <span class="hljs-title">Enrolments</span>(<span class="hljs-params">
+    <span class="hljs-built_in">string</span> studentNumber,
+    CancellationToken cancellationToken</span>)
+</span></div></code></pre>
+<p>The controller should:</p>
+<ol>
+<li>Create <code>ViewStudentEnrolmentsInput</code>.</li>
+<li>Call the input port.</li>
+<li>Map <code>StudentEnrolmentsOutput</code> to the MVC view model.</li>
+<li>Return the Razor view.</li>
+</ol>
+<p>The Web mapper converts:</p>
+<pre class="hljs"><code><div>StudentEnrolmentsOutput -&gt; StudentEnrolmentsViewModel
+</div></code></pre>
+<p>The MVC model may contain presentation-ready strings, including:</p>
+<pre class="hljs"><code><div>Not recorded
+</div></code></pre>
+<p>for a missing expected end date.</p>
+<p>The Razor view must preserve:</p>
+<ul>
+<li>Required Enrolment fields.</li>
+<li>Earliest-to-latest ordering.</li>
+<li>The <strong>No enrolments found</strong> response.</li>
+<li>Read-only behaviour.</li>
+</ul>
+<p>Confirm that the Web adapter uses the Razor Class Library SDK and includes the required <code>_ViewImports.cshtml</code>, <code>_ViewStart.cshtml</code>, and shared layout configuration.</p>
+<p>Do not copy the Razor view into the Application project.</p>
+<h2 id="task-9-implement-the-rest-api-adapter">Task 9: Implement the REST API Adapter</h2>
+<p>In the API project, create or complete:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Adapters.API/
+├── Controllers/
+│   └── StudentsApiController.cs
+├── Responses/
+│   ├── StudentEnrolmentsResponse.cs
+│   └── EnrolmentResponse.cs
+└── Mappers/
+    └── StudentEnrolmentsApiMapper.cs
+</div></code></pre>
+<p>If the scaffold does not already contain the ASP.NET Core framework reference, add this to the API project file:</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">ItemGroup</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">FrameworkReference</span> <span class="hljs-attr">Include</span>=<span class="hljs-string">&quot;Microsoft.AspNetCore.App&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ItemGroup</span>&gt;</span>
+</div></code></pre>
+<p>Use attribute routing:</p>
+<pre class="hljs"><code><div>[<span class="hljs-meta">ApiController</span>]
+[<span class="hljs-meta">Route(<span class="hljs-string">&quot;api/students&quot;</span>)</span>]
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">StudentsApiController</span> : <span class="hljs-title">ControllerBase</span>
+{
+    [<span class="hljs-meta">HttpGet(<span class="hljs-string">&quot;{studentNumber}/enrolments&quot;</span>)</span>]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">async</span> Task&lt;
+        ActionResult&lt;StudentEnrolmentsResponse&gt;&gt;
+        GetEnrolments(
+            <span class="hljs-built_in">string</span> studentNumber,
+            CancellationToken cancellationToken)
+    {
+        <span class="hljs-comment">// Create the Business input DTO.</span>
+        <span class="hljs-comment">// Execute the shared use case.</span>
+        <span class="hljs-comment">// Map the output DTO to the API response.</span>
+    }
+}
+</div></code></pre>
+<p>The API controller depends on the same input port as the MVC controller:</p>
+<pre class="hljs"><code><div>IViewStudentEnrolmentsUseCase
+</div></code></pre>
+<p>The API mapper converts:</p>
+<pre class="hljs"><code><div>StudentEnrolmentsOutput -&gt; StudentEnrolmentsResponse
+</div></code></pre>
+<p>Do not return:</p>
+<ul>
+<li>MVC view models.</li>
+<li>Domain entities.</li>
+<li>EF persistence records.</li>
+</ul>
+<p>For the core exercise, use:</p>
+<pre class="hljs"><code><div>200 OK with an empty Enrolments array
+</div></code></pre>
+<p>when no Enrolments match. This preserves the supplied use case's empty-result behaviour and keeps it distinct from transport-specific errors.</p>
+<h1 id="part-5-configure-and-verify-the-application">Part 5: Configure and Verify the Application</h1>
+<h2 id="task-10-configure-the-composition-root">Task 10: Configure the Composition Root</h2>
+<p>Use <code>PgrStudentManagement.Application</code> as the only executable project.</p>
+<p>The Application host should already reference:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Business
+PgrStudentManagement.Adapters.Persistence
+PgrStudentManagement.Adapters.Web
+PgrStudentManagement.Adapters.API
+</div></code></pre>
+<p>Register the Business input port and Persistence output-port implementation:</p>
+<pre class="hljs"><code><div>builder.Services.AddScoped&lt;
+    IViewStudentEnrolmentsUseCase,
+    ViewStudentEnrolmentsUseCase&gt;();
+
+builder.Services.AddScoped&lt;
+    IEnrolmentGateway,
+    EfEnrolmentGateway&gt;();
+</div></code></pre>
+<p>Register the required mappers and <code>StudentManagementDbContext</code>.</p>
+<p>Load controllers from both incoming adapter assemblies:</p>
+<pre class="hljs"><code><div>builder.Services
+    .AddControllersWithViews()
+    .AddApplicationPart(
+        <span class="hljs-keyword">typeof</span>(StudentsController).Assembly)
+    .AddApplicationPart(
+        <span class="hljs-keyword">typeof</span>(StudentsApiController).Assembly);
+</div></code></pre>
+<p>Configure conventional MVC routes and attribute-routed API controllers:</p>
+<pre class="hljs"><code><div>app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: <span class="hljs-string">&quot;default&quot;</span>,
+    pattern:
+        <span class="hljs-string">&quot;{controller=Home}/{action=Index}/{id?}&quot;</span>);
+
+app.MapControllers();
+</div></code></pre>
+<p>Keep the former Week 5 host temporarily only while moving and verifying functionality.</p>
+<p>Do not run two active hosts.</p>
+<p>After the new Application host works, remove the old host from the final solution or retain it only in a clearly labelled backup branch.</p>
+<h2 id="task-11-verify-w5-uc01-through-mvc-and-rest">Task 11: Verify W5-UC01 Through MVC and REST</h2>
+<p>Run:</p>
+<pre class="hljs"><code><div>dotnet build
+dotnet <span class="hljs-built_in">test</span>
+dotnet run --project PgrStudentManagement.Application
+</div></code></pre>
+<p>Test the MVC route implemented by your controller. A typical route is:</p>
+<pre class="hljs"><code><div>/Students/Enrolments?studentNumber=S100002
+</div></code></pre>
+<p>Test the REST route:</p>
+<pre class="hljs"><code><div>/api/students/S100002/enrolments
+</div></code></pre>
+<p>Also test a known Student with no Enrolments.</p>
+<p>Confirm that both adapters:</p>
+<ul>
+<li>Invoke the same <code>IViewStudentEnrolmentsUseCase</code> input port.</li>
+<li>Return the same Enrolment facts.</li>
+<li>Preserve earliest-to-latest ordering.</li>
+<li>Implement the <strong>No Enrolments Found</strong> behaviour consistently.</li>
+<li>Avoid direct access to the Persistence Adapter.</li>
+</ul>
+<p>Confirm that:</p>
+<ul>
+<li>Domain contains no EF, MongoDB, MVC, or JSON annotations.</li>
+<li>Business references Domain only.</li>
+<li>Business has no EF Core, MongoDB, or ASP.NET Core package dependency.</li>
+<li>Web and API do not reference Persistence.</li>
+<li>Web and API do not reference one another.</li>
+<li><code>PgrStudentManagement.Application</code> is the only executable host.</li>
+<li>The application still runs as one process and one deployment.</li>
+</ul>
+<h1 id="core-completion-checklist">Core Completion Checklist</h1>
+<h2 id="project-boundaries">Project Boundaries</h2>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">The six production projects build.</label></li>
+<li><input type="checkbox" id="checkbox1"><label for="checkbox1">Project references follow the Dependency Rule.</label></li>
+<li><input type="checkbox" id="checkbox2"><label for="checkbox2"><code>PgrStudentManagement.Application</code> is the only executable project.</label></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">Adapter projects do not reference one another.</label></li>
+</ul>
+<h2 id="domain-and-business">Domain and Business</h2>
+<ul>
+<li><input type="checkbox" id="checkbox4"><label for="checkbox4">Domain entities contain no framework or persistence annotations.</label></li>
+<li><input type="checkbox" id="checkbox5"><label for="checkbox5">Business owns <code>IViewStudentEnrolmentsUseCase</code>.</label></li>
+<li><input type="checkbox" id="checkbox6"><label for="checkbox6">Business owns <code>IEnrolmentGateway</code>.</label></li>
+<li><input type="checkbox" id="checkbox7"><label for="checkbox7">Business DTOs contain no UI, HTTP, or persistence concerns.</label></li>
+<li><input type="checkbox" id="checkbox8"><label for="checkbox8">The use case owns chronological ordering.</label></li>
+<li><input type="checkbox" id="checkbox9"><label for="checkbox9">Business tests pass using a fake gateway.</label></li>
+</ul>
+<h2 id="persistence-adapter">Persistence Adapter</h2>
+<ul>
+<li><input type="checkbox" id="checkbox10"><label for="checkbox10">EF records are separate from Domain entities.</label></li>
+<li><input type="checkbox" id="checkbox11"><label for="checkbox11"><code>EfEnrolmentGateway</code> implements <code>IEnrolmentGateway</code>.</label></li>
+<li><input type="checkbox" id="checkbox12"><label for="checkbox12">The persistence mapper converts EF records to Domain entities.</label></li>
+<li><input type="checkbox" id="checkbox13"><label for="checkbox13">Existing table and column mappings are preserved.</label></li>
+<li><input type="checkbox" id="checkbox14"><label for="checkbox14">The gateway performs a read-only query.</label></li>
+</ul>
+<h2 id="incoming-adapters">Incoming Adapters</h2>
+<ul>
+<li><input type="checkbox" id="checkbox15"><label for="checkbox15">MVC and REST invoke the same Business input port.</label></li>
+<li><input type="checkbox" id="checkbox16"><label for="checkbox16">MVC uses a separate view model and Web mapper.</label></li>
+<li><input type="checkbox" id="checkbox17"><label for="checkbox17">REST uses separate response models and an API mapper.</label></li>
+<li><input type="checkbox" id="checkbox18"><label for="checkbox18">Neither incoming adapter accesses <code>DbContext</code> or <code>EfEnrolmentGateway</code> directly.</label></li>
+<li><input type="checkbox" id="checkbox19"><label for="checkbox19">The Razor view renders from the Web adapter project.</label></li>
+</ul>
+<h2 id="behaviour">Behaviour</h2>
+<ul>
+<li><input type="checkbox" id="checkbox20"><label for="checkbox20">The MVC page displays the required Enrolment fields.</label></li>
+<li><input type="checkbox" id="checkbox21"><label for="checkbox21">The REST endpoint returns the same Enrolment facts.</label></li>
+<li><input type="checkbox" id="checkbox22"><label for="checkbox22">Results are ordered from earliest to latest.</label></li>
+<li><input type="checkbox" id="checkbox23"><label for="checkbox23">A missing expected end date is represented consistently.</label></li>
+<li><input type="checkbox" id="checkbox24"><label for="checkbox24">A known Student with no Enrolments produces the empty-result response.</label></li>
+<li><input type="checkbox" id="checkbox25"><label for="checkbox25">Viewing Enrolments does not modify data.</label></li>
+</ul>
+<h1 id="extension-tasks">Extension Tasks</h1>
+<h2 id="extension-1-independently-refactor-w5-uc04">Extension 1: Independently Refactor W5-UC04</h2>
+<p>Apply the same architecture to:</p>
+<pre class="hljs"><code><div>W5-UC04: Record Research Activity
+</div></code></pre>
+<p>Use the existing description in:</p>
+<pre class="hljs"><code><div>week05-lab2-use-cases.md
+</div></code></pre>
+<p>Create:</p>
+<pre class="hljs"><code><div>Domain
+    ResearchActivity
+    ResearchActivityType
+
+Business
+    IRecordResearchActivityUseCase
+    RecordResearchActivityUseCase
+    Input and output DTOs
+    IResearchActivityGateway
+
+Persistence
+    ResearchActivityDocument
+    MongoResearchActivityGateway
+    ResearchActivityDocumentMapper
+
+Web
+    MVC controller action
+    Form view model
+    Web mapper
+    Razor form
+
+API
+    REST controller
+    Request and response models
+    API mapper
+</div></code></pre>
+<p>The Domain entity must not contain BSON annotations.</p>
+<p>The Business use case should:</p>
+<ul>
+<li>Validate the application-specific rules.</li>
+<li>Reject unsupported activity types.</li>
+<li>Assign the application-defined string identifier.</li>
+<li>Assign the creation timestamp.</li>
+<li>Call <code>IResearchActivityGateway</code> only after successful validation.</li>
+</ul>
+<p>Use a fake gateway to test:</p>
+<ul>
+<li>Valid activity creation.</li>
+<li>Required information missing.</li>
+<li>Unsupported activity type.</li>
+<li>Identifier and creation timestamp assignment.</li>
+<li>No persistence call after failed validation.</li>
+</ul>
+<h2 id="extension-2-refactor-another-existing-use-case">Extension 2: Refactor Another Existing Use Case</h2>
+<p>Choose one:</p>
+<pre class="hljs"><code><div>W5-UC03: View Student Research Activities
+W4-UC04: Assign Academic Supervisor to Student
+W4-UC05: View Student Supervisory Team
+</div></code></pre>
+<p>Define Business ports rather than accessing another adapter or <code>DbContext</code> directly.</p>
+<h2 id="extension-3-publish-and-inspect-the-deployment">Extension 3: Publish and Inspect the Deployment</h2>
+<p>Run:</p>
+<pre class="hljs"><code><div>dotnet publish PgrStudentManagement.Application \
+    --configuration Release
+</div></code></pre>
+<p>Identify the assemblies for:</p>
+<ul>
+<li>Domain.</li>
+<li>Business.</li>
+<li>Persistence Adapter.</li>
+<li>Web Adapter.</li>
+<li>API Adapter.</li>
+<li>Application host.</li>
+</ul>
+<p>Explain why several assemblies still form one deployed application.</p>
+<h1 id="reflection-questions">Reflection Questions</h1>
+<ol>
+<li>Which project owns <code>IEnrolmentGateway</code>, and why?</li>
+<li>What is the difference between the input port and the output port?</li>
+<li>How can runtime control reach the EF gateway when Business does not reference Persistence?</li>
+<li>Why are Domain entities separate from EF records?</li>
+<li>Why do MVC and REST use different boundary models?</li>
+<li>Which classes and behaviour are shared by the MVC and REST paths?</li>
+<li>What would have to change if SQLite were replaced?</li>
+<li>How do project references help enforce the Dependency Rule?</li>
+</ol>
+<h1 id="keeping-the-project-for-lab-2">Keeping the Project for Lab 2</h1>
+<p>Retain:</p>
+<ul>
+<li>The complete multi-project solution.</li>
+<li>The supplied initial class diagram.</li>
+<li>Your final implementation of <code>W5-UC01</code>.</li>
+<li>Business tests and fake gateway.</li>
+<li>Any persistence tests completed.</li>
+<li>Exact class, method, namespace, project, and route names.</li>
+<li>Notes describing deliberate differences from the initial diagram.</li>
+</ul>
+<p>In Lab 2, you will create:</p>
+<ul>
+<li>A project dependency diagram.</li>
+<li>A C4 Component diagram.</li>
+<li>An implementation class diagram.</li>
+<li>An MVC sequence diagram.</li>
+<li>A REST sequence diagram.</li>
+</ul>
+<p>Save a working checkpoint:</p>
+<pre class="hljs"><code><div>git status
+git add .
+git commit -m <span class="hljs-string">&quot;Complete Week 6 Clean Architecture core refactoring&quot;</span>
+</div></code></pre>
+
+</body>
+</html>

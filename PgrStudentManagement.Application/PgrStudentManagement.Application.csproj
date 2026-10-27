@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\PgrStudentManagement.Business\PgrStudentManagement.Business.csproj" />
+    <ProjectReference Include="..\PgrStudentManagement.Adapters.Persistence\PgrStudentManagement.Adapters.Persistence.csproj" />
+    <ProjectReference Include="..\PgrStudentManagement.Adapters.Web\PgrStudentManagement.Adapters.Web.csproj" />
+    <ProjectReference Include="..\PgrStudentManagement.Adapters.API\PgrStudentManagement.Adapters.API.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>

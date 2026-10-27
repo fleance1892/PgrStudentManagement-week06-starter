@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>week05-lab1-use-cases.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="week-5-use-case-descriptions">Week 5 Use-Case Descriptions</h1>
+<h2 id="purpose">Purpose</h2>
+<p>Week 5 changes how application data is modelled and persisted.</p>
+<p>Replacing an in-memory collection with a relational database does not, by itself, create a new user goal. Use cases describe externally observable behaviour rather than a particular persistence technology.</p>
+<p>The core lab therefore introduces one new use case that requires the <code>Student</code> to <code>Enrolment</code> relationship. Existing Student Management and Academic Supervisor Management use cases continue to apply while their internal data access may be refactored.</p>
+<h2 id="scope">Scope</h2>
+<h3 id="core-use-case">Core Use Case</h3>
+<ul>
+<li><code>W5-UC01</code>: View Student Enrolments</li>
+</ul>
+<h3 id="extension-use-case">Extension Use Case</h3>
+<p>For students who select <strong>Milestone Management</strong> as the new relational module:</p>
+<ul>
+<li><code>W5-UC02</code>: View Enrolment Milestones</li>
+</ul>
+<p>For students who select <strong>Academic Supervisor Management</strong>, use the existing Week 4 use cases, particularly:</p>
+<ul>
+<li><code>W4-UC01</code>: Create Academic Supervisor</li>
+<li><code>W4-UC02</code>: List Academic Supervisors</li>
+<li><code>W4-UC03</code>: View Academic Supervisor Details</li>
+<li><code>W4-UC04</code>: Assign Academic Supervisor to Student</li>
+<li><code>W4-UC05</code>: View Student Supervisory Team</li>
+</ul>
+<p>The observable behaviour of those use cases should remain unchanged when their persistence implementation is replaced.</p>
+<h2 id="use-case-summary">Use-Case Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Use Case ID</th>
+<th>Use Case</th>
+<th>Primary Actor</th>
+<th>Classification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W5-UC01</td>
+<td>View Student Enrolments</td>
+<td>College Administrator</td>
+<td>Core</td>
+</tr>
+<tr>
+<td>W5-UC02</td>
+<td>View Enrolment Milestones</td>
+<td>College Administrator</td>
+<td>Extension</td>
+</tr>
+</tbody>
+</table>
+<h2 id="use-case-diagram">Use-Case Diagram</h2>
+<img src="http://www.plantuml.com/plantuml/svg/VP31Qi9048RlynH3xa8hv5eigKSlYlLI24ConiN9hEnCi59yzn9hqdXezxJiVFD_Fximf-HTAxXZFkRbceKyH2KfjyPbGSO6uC65RmJc-8lW6pdXrXX_EE6zeqTCeJaurY5nrODWnw0dIjJYYQeZDRpnYp3sOz96U0BOWUfu3jhWdiGOW2gF2RCYYd33-5gtGODv8eyfGxB75u0n5BEDTpMhuugK6cxxw-PYpcs6Nu28GvkHj0awCFtfZ2ioncoNpxR5q_E7lWS-uv2_r1Ibtx5ReLtUCxVbApnwLa7OF2fFEoq_dTL2r7-KyxjoLE4ODP7Exz8hmCElu6psCjJwOp07MB3MNIlm3G00" alt="uml diagram"><h1 id="core-use-case-description">Core Use-Case Description</h1>
+<h2 id="w5-uc01-view-student-enrolments">W5-UC01: View Student Enrolments</h2>
+<p><strong>Primary Actor:</strong> College Administrator<br>
+<strong>Classification:</strong> Core</p>
+<h3 id="goal">Goal</h3>
+<p>View the enrolments recorded for a selected student in chronological order.</p>
+<h3 id="preconditions">Preconditions</h3>
+<ul>
+<li>The Student Management System is available.</li>
+<li>The College Administrator can access Student Management.</li>
+<li>A student number has been selected or supplied.</li>
+</ul>
+<h3 id="trigger">Trigger</h3>
+<p>The College Administrator selects <strong>View Enrolments</strong> for a student.</p>
+<h3 id="main-success-scenario">Main Success Scenario</h3>
+<ol>
+<li>The system receives the selected student number.</li>
+<li>The system finds one or more enrolments associated with the student number.</li>
+<li>The system orders the enrolments by start date, from earliest to latest.</li>
+<li>The system displays the selected student's number.</li>
+<li>For each enrolment, the system displays:
+<ul>
+<li>Programme code</li>
+<li>Start date</li>
+<li>Expected end date, where recorded</li>
+<li>Mode of study</li>
+<li>Enrolment status</li>
+</ul>
+</li>
+<li>The College Administrator reviews the enrolment information.</li>
+</ol>
+<h3 id="alternative-flow-a1-no-enrolments-found">Alternative Flow A1: No Enrolments Found</h3>
+<p>At the step where the system searches for enrolments:</p>
+<ol>
+<li>No enrolments are associated with the supplied student number.</li>
+<li>The system displays <strong>No enrolments found</strong>.</li>
+<li>No Student or Enrolment information is changed.</li>
+<li>The use case ends.</li>
+</ol>
+<h3 id="postconditions">Postconditions</h3>
+<h4 id="success">Success</h4>
+<ul>
+<li>The student's available enrolments have been displayed in chronological order.</li>
+<li>No Student or Enrolment information has been changed.</li>
+</ul>
+<h4 id="no-enrolments-found">No Enrolments Found</h4>
+<ul>
+<li>No enrolment information has been displayed.</li>
+<li>No Student or Enrolment information has been changed.</li>
+<li>A <strong>No enrolments found</strong> message has been displayed.</li>
+</ul>
+<h3 id="business-rules">Business Rules</h3>
+<ul>
+<li>An Enrolment belongs to exactly one Student.</li>
+<li>A Student may have zero, one, or several Enrolments.</li>
+<li>Enrolments are displayed from earliest to latest start date.</li>
+<li>A missing expected end date is displayed consistently, for example as <strong>Not recorded</strong>.</li>
+<li>Viewing enrolments must not modify persistent data.</li>
+</ul>
+<h3 id="design-decisions">Design Decisions</h3>
+<p>Decide:</p>
+<ul>
+<li>Which Student view provides the <strong>View Enrolments</strong> link.</li>
+<li>How dates are formatted.</li>
+<li>How a missing expected end date is displayed.</li>
+<li>Whether the page displays the student's name as well as their number.</li>
+<li>Whether a supplied but unknown student number is distinguished from a known student with no enrolments.</li>
+</ul>
+<p>If you introduce a separate <strong>Student Not Found</strong> outcome, document it as an additional alternative flow and apply it consistently to the implementation and diagrams.</p>
+<h3 id="data-required">Data Required</h3>
+<p>The use case requires:</p>
+<ul>
+<li>A student number.</li>
+<li>Enrolments associated with that student number.</li>
+<li>A query that orders matching Enrolments by start date.</li>
+</ul>
+<p>The persistence technology is not part of the use-case behaviour. The implementation may use Entity Framework Core and SQLite, but the observable outcome should remain the same if the persistence technology changes.</p>
+<h1 id="extension-use-case-description">Extension Use-Case Description</h1>
+<h2 id="w5-uc02-view-enrolment-milestones">W5-UC02: View Enrolment Milestones</h2>
+<p><strong>Primary Actor:</strong> College Administrator<br>
+<strong>Classification:</strong> Extension</p>
+<h3 id="goal-1">Goal</h3>
+<p>View the milestones associated with a selected enrolment.</p>
+<h3 id="preconditions-1">Preconditions</h3>
+<ul>
+<li>The Student Management System is available.</li>
+<li>The College Administrator can access Student Management.</li>
+<li>The selected enrolment exists.</li>
+<li>Milestone Management has been implemented.</li>
+</ul>
+<h3 id="trigger-1">Trigger</h3>
+<p>The College Administrator selects <strong>View Milestones</strong> for an enrolment.</p>
+<h3 id="main-success-scenario-1">Main Success Scenario</h3>
+<ol>
+<li>The system receives the selected enrolment identifier.</li>
+<li>The system finds one or more student milestones associated with the enrolment.</li>
+<li>The system retrieves the corresponding milestone definitions.</li>
+<li>The system orders the milestones using the selected ordering rule.</li>
+<li>For each student milestone, the system displays:
+<ul>
+<li>Milestone code</li>
+<li>Milestone title</li>
+<li>Due date, where recorded</li>
+<li>Completion date, where recorded</li>
+<li>Current milestone status</li>
+</ul>
+</li>
+<li>The College Administrator reviews the milestone information.</li>
+</ol>
+<h3 id="alternative-flow-a1-no-milestones-found">Alternative Flow A1: No Milestones Found</h3>
+<p>At the step where the system searches for student milestones:</p>
+<ol>
+<li>No student milestones are associated with the selected enrolment.</li>
+<li>The system displays <strong>No milestones found</strong>.</li>
+<li>No Enrolment or milestone information is changed.</li>
+<li>The use case ends.</li>
+</ol>
+<h3 id="postconditions-1">Postconditions</h3>
+<h4 id="success-1">Success</h4>
+<ul>
+<li>The milestones associated with the enrolment have been displayed.</li>
+<li>No Enrolment or milestone information has been changed.</li>
+</ul>
+<h4 id="no-milestones-found">No Milestones Found</h4>
+<ul>
+<li>No milestone information has been displayed.</li>
+<li>No information has been changed.</li>
+<li>A <strong>No milestones found</strong> message has been displayed.</li>
+</ul>
+<h3 id="business-rules-1">Business Rules</h3>
+<ul>
+<li>A Student Milestone belongs to exactly one Enrolment.</li>
+<li>A Milestone Definition may be used by many Student Milestones.</li>
+<li>The same milestone definition should not be assigned to the same enrolment more than once.</li>
+<li>Missing due and completion dates must be displayed consistently.</li>
+<li>Viewing milestones must not modify persistent data.</li>
+</ul>
+<h3 id="design-decisions-1">Design Decisions</h3>
+<p>Decide:</p>
+<ul>
+<li>How milestones are ordered.</li>
+<li>How missing dates are displayed.</li>
+<li>Whether historical progression entries appear on this page or on a separate details page.</li>
+<li>Whether an unknown enrolment is distinguished from an enrolment with no milestones.</li>
+</ul>
+<p>If you introduce an <strong>Enrolment Not Found</strong> outcome, document it as an additional alternative flow.</p>
+<h3 id="data-required-1">Data Required</h3>
+<p>The use case requires relationships among:</p>
+<pre class="hljs"><code><div>Enrolment
+    -&gt; StudentMilestone
+        -&gt; MilestoneDefinition
+</div></code></pre>
+<p>The use case provides a reason to introduce DAO operations that query related relational data. It does not require a milestone update operation.</p>
+
+</body>
+</html>

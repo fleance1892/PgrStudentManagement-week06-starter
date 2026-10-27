@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="PgrStudentManagement.Adapters.API/PgrStudentManagement.Adapters.API.csproj" />
+  <Project Path="PgrStudentManagement.Adapters.Persistence/PgrStudentManagement.Adapters.Persistence.csproj" />
+  <Project Path="PgrStudentManagement.Adapters.Web/PgrStudentManagement.Adapters.Web.csproj" />
+  <Project Path="PgrStudentManagement.Application/PgrStudentManagement.Application.csproj" />
+  <Project Path="PgrStudentManagement.Business/PgrStudentManagement.Business.csproj" />
+  <Project Path="PgrStudentManagement.Domain/PgrStudentManagement.Domain.csproj" />
+  <Project Path="PgrStudentManagement.Tests/PgrStudentManagement.Tests.csproj" />
+</Solution>

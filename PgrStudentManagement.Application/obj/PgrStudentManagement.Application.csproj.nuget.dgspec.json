@@ -1,0 +1,479 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Application/PgrStudentManagement.Application.csproj": {}
+  },
+  "projects": {
+    "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.API/PgrStudentManagement.Adapters.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.API/PgrStudentManagement.Adapters.API.csproj",
+        "projectName": "PgrStudentManagement.Adapters.API",
+        "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.API/PgrStudentManagement.Adapters.API.csproj",
+        "packagesPath": "/Users/niall/.nuget/packages/",
+        "outputPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/niall/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj": {
+                "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.400"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Persistence/PgrStudentManagement.Adapters.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Persistence/PgrStudentManagement.Adapters.Persistence.csproj",
+        "projectName": "PgrStudentManagement.Adapters.Persistence",
+        "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Persistence/PgrStudentManagement.Adapters.Persistence.csproj",
+        "packagesPath": "/Users/niall/.nuget/packages/",
+        "outputPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/niall/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj": {
+                "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj"
+              },
+              "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/PgrStudentManagement.Domain.csproj": {
+                "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/PgrStudentManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.400"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/PgrStudentManagement.Adapters.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/PgrStudentManagement.Adapters.Web.csproj",
+        "projectName": "PgrStudentManagement.Adapters.Web",
+        "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/PgrStudentManagement.Adapters.Web.csproj",
+        "packagesPath": "/Users/niall/.nuget/packages/",
+        "outputPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/niall/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj": {
+                "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.400"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Application/PgrStudentManagement.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Application/PgrStudentManagement.Application.csproj",
+        "projectName": "PgrStudentManagement.Application",
+        "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Application/PgrStudentManagement.Application.csproj",
+        "packagesPath": "/Users/niall/.nuget/packages/",
+        "outputPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/niall/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.API/PgrStudentManagement.Adapters.API.csproj": {
+                "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.API/PgrStudentManagement.Adapters.API.csproj"
+              },
+              "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Persistence/PgrStudentManagement.Adapters.Persistence.csproj": {
+                "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Persistence/PgrStudentManagement.Adapters.Persistence.csproj"
+              },
+              "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/PgrStudentManagement.Adapters.Web.csproj": {
+                "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/PgrStudentManagement.Adapters.Web.csproj"
+              },
+              "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj": {
+                "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.400"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.31, 8.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj",
+        "projectName": "PgrStudentManagement.Business",
+        "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/PgrStudentManagement.Business.csproj",
+        "packagesPath": "/Users/niall/.nuget/packages/",
+        "outputPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/niall/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/PgrStudentManagement.Domain.csproj": {
+                "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/PgrStudentManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.400"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/PgrStudentManagement.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/PgrStudentManagement.Domain.csproj",
+        "projectName": "PgrStudentManagement.Domain",
+        "projectPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/PgrStudentManagement.Domain.csproj",
+        "packagesPath": "/Users/niall/.nuget/packages/",
+        "outputPath": "/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/niall/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.400"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.31, 8.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

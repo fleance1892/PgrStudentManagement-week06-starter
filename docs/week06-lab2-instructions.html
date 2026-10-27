@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>week06-lab2-instructions.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="week-6-lab-2-model-the-clean-architecture-implementation">Week 6 Lab 2: Model the Clean Architecture Implementation</h1>
+<h2 id="purpose">Purpose</h2>
+<p>In Lab 1, you refactored:</p>
+<pre class="hljs"><code><div>W5-UC01: View Student Enrolments
+</div></code></pre>
+<p>into the supplied Clean Architecture project structure and exposed the same Business use case through MVC and REST adapters.</p>
+<p>In this two-hour lab, you will model the architecture you implemented.</p>
+<p>You will create:</p>
+<ol>
+<li>A project dependency diagram.</li>
+<li>A C4 Component diagram.</li>
+<li>An implementation class diagram for <code>W5-UC01</code>.</li>
+<li>An MVC sequence diagram for <code>W5-UC01</code>.</li>
+<li>A REST sequence diagram for <code>W5-UC01</code>.</li>
+</ol>
+<p>The diagrams must represent your source code. Use the supplied initial class diagram as a starting skeleton, but complete and correct it to match your implementation.</p>
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By completing this lab, you should be able to:</p>
+<ul>
+<li>Model .NET project references and Clean Architecture dependency directions.</li>
+<li>Distinguish project structure from runtime components.</li>
+<li>Create an implementation class diagram showing ports, adapters, models, and mappings.</li>
+<li>Create MVC and REST sequence diagrams that invoke the same Business use case.</li>
+<li>Check consistency among use cases, source code, project references, and diagrams.</li>
+</ul>
+<h2 id="existing-use-case">Existing Use Case</h2>
+<p>Week 6 introduces no new use case for the core lab.</p>
+<p>Refer to:</p>
+<pre class="hljs"><code><div>week05-lab1-use-cases.md
+</div></code></pre>
+<p>Model your implementation of:</p>
+<pre class="hljs"><code><div>W5-UC01: View Student Enrolments
+</div></code></pre>
+<p>Preserve its actor, main scenario, <strong>No Enrolments Found</strong> flow, chronological ordering rule, required information, and read-only postconditions.</p>
+<h2 id="required-starting-point">Required Starting Point</h2>
+<p>Start from your completed Week 6 Lab 1 solution.</p>
+<p>It should contain:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Domain
+PgrStudentManagement.Business
+PgrStudentManagement.Adapters.Persistence
+PgrStudentManagement.Adapters.Web
+PgrStudentManagement.Adapters.API
+PgrStudentManagement.Application
+PgrStudentManagement.Tests
+</div></code></pre>
+<p>Before modelling, run:</p>
+<pre class="hljs"><code><div>dotnet build
+dotnet <span class="hljs-built_in">test</span>
+dotnet run --project PgrStudentManagement.Application
+</div></code></pre>
+<p>Confirm that <code>W5-UC01</code> works through:</p>
+<ul>
+<li>MVC and Razor.</li>
+<li>REST and JSON.</li>
+</ul>
+<p>Create a checkpoint:</p>
+<pre class="hljs"><code><div>git status
+git add .
+git commit -m <span class="hljs-string">&quot;Preserve working Week 6 Lab 1 implementation&quot;</span>
+</div></code></pre>
+<h2 id="supplied-material">Supplied Material</h2>
+<p>Use the initial class diagram provided in the lab 1: <code>week06-lab1-initial-class-diagram.md</code>.
+This initial class diagram is incomplete by design. Remove elements that do not exist in your source code and add implementation details that were omitted.</p>
+<h1 id="part-1-inspect-the-implementation">Part 1: Inspect the Implementation</h1>
+<h2 id="task-1-create-an-implementation-inventory">Task 1: Create an Implementation Inventory</h2>
+<p>For each production project, record:</p>
+<pre class="hljs"><code><div>Project:
+Responsibility:
+Project references:
+Main namespaces:
+Classes used by W5-UC01:
+Framework dependencies:
+</div></code></pre>
+<p>Confirm:</p>
+<pre class="hljs"><code><div>Domain
+    has no production project references
+
+Business
+    references Domain only
+
+Persistence Adapter
+    references Business and Domain
+
+Web Adapter
+    references Business
+    and references Domain only if required by implemented code
+
+API Adapter
+    references Business
+    and references Domain only if required by implemented code
+
+Application
+    references Business and all adapter projects
+</div></code></pre>
+<p>Correct any prohibited project reference before continuing.</p>
+<h2 id="task-2-trace-w5-uc01-through-both-incoming-adapters">Task 2: Trace W5-UC01 Through Both Incoming Adapters</h2>
+<p>Trace the actual runtime path for:</p>
+<pre class="hljs"><code><div>MVC request
+REST request
+</div></code></pre>
+<p>A typical path is:</p>
+<pre class="hljs"><code><div>Incoming controller
+    -&gt; adapter mapper
+        -&gt; Business input port
+            -&gt; Business use-case implementation
+                -&gt; Business output port
+                    -&gt; EF gateway at runtime
+                        -&gt; persistence mapper
+                            -&gt; SQLite
+</div></code></pre>
+<p>Record:</p>
+<ul>
+<li>Incoming controller.</li>
+<li>MVC view model or API response model.</li>
+<li>Adapter mapper.</li>
+<li>Business input DTO.</li>
+<li>Input-port interface.</li>
+<li>Use-case implementation.</li>
+<li>Output DTO.</li>
+<li>Output-port interface.</li>
+<li>Concrete EF gateway.</li>
+<li>Persistence record.</li>
+<li>Persistence mapper.</li>
+<li><code>DbContext</code>.</li>
+<li>SQLite database.</li>
+</ul>
+<p>Use this inventory to verify every later diagram.</p>
+<h1 id="part-2-project-and-component-diagrams">Part 2: Project and Component Diagrams</h1>
+<h2 id="task-3-create-the-project-dependency-diagram">Task 3: Create the Project Dependency Diagram</h2>
+<p>Create a PlantUML package diagram showing:</p>
+<pre class="hljs"><code><div>PgrStudentManagement.Domain
+PgrStudentManagement.Business
+PgrStudentManagement.Adapters.Persistence
+PgrStudentManagement.Adapters.Web
+PgrStudentManagement.Adapters.API
+PgrStudentManagement.Application
+PgrStudentManagement.Tests
+</div></code></pre>
+<p>Show actual <code>.csproj</code> references using dashed dependency arrows from the referencing project to the referenced project.</p>
+<p>Use this starting point and remove or add packages/arrows to match your source:</p>
+<img src="http://www.plantuml.com/plantuml/svg/ZP8zJyD038Rt-nKM2rl5nD01jNmC34WLHNH4Rl8sFNhndSuEgFyU9JGX8aExdNFFy-fiPw76sPewq0OutDn-h7ByH64VZqYG4b9ugBiEs1bPfEohlL7fCmhpKPmUl2JEN5FYui0LrdOCeFQQfGeO0S4Bx9X0CTi-ZYvqpsNyzbBHZeF2kLCKNQsglBQcXDWB2rUe8JPxZ3LxkI9M-ZsUuUyRzGBLpkYBCywov6J8EbiXgrU35EZyKNrfn0RRJjrWUwcoN3rtoZBvSqfAmHVSxk9a3FKPymrglpFfJixrew7PxEuqMPfJnWwvRLVTgFUE6OGv-Jg5BbOfDfOQenIpJPKXjkRKhuyWvgtzopROJeBbAnwWvEKlT9dyPTWmYlzuHjM-AYir2YfOCSN7JnyRQVITJmkRo6qdSmgHIwMNzuSUd71jAptt-hH-6q2tW9HD7TmF" alt="uml diagram"><p>Do not show Web-to-Domain or API-to-Domain references unless they exist in the corresponding project files.</p>
+<p>Check that:</p>
+<ul>
+<li>Business does not reference an adapter.</li>
+<li>Adapter projects do not reference one another.</li>
+<li>Application is the outer composition root.</li>
+</ul>
+<h2 id="task-4-create-the-c4-component-diagram">Task 4: Create the C4 Component Diagram</h2>
+<p>Create a C4 Component diagram for the implemented core architecture.</p>
+<p>Show:</p>
+<ul>
+<li>Browser.</li>
+<li>REST client.</li>
+<li>MVC and Razor Adapter.</li>
+<li>REST API Adapter.</li>
+<li>Business Use Cases.</li>
+<li>Domain Model.</li>
+<li>Relational Persistence Adapter.</li>
+<li>SQLite.</li>
+<li><code>PgrStudentManagement.Application</code> as the executable boundary or host.</li>
+</ul>
+<p>The six .NET projects are not six C4 containers. They compile into assemblies that run inside one ASP.NET Core application process.</p>
+<p>Your diagram should communicate:</p>
+<pre class="hljs"><code><div>Browser
+    -&gt; MVC and Razor Adapter
+        -&gt; Business Use Cases
+
+REST Client
+    -&gt; REST API Adapter
+        -&gt; Business Use Cases
+
+Business Use Cases
+    -&gt; Business-owned output port
+        -&gt; Relational Persistence Adapter at runtime
+            -&gt; SQLite
+
+Business Use Cases
+    -&gt; Domain Model
+</div></code></pre>
+<p>Do not draw:</p>
+<pre class="hljs"><code><div>MVC Controller -&gt; DbContext
+REST Controller -&gt; EfEnrolmentGateway
+Business -&gt; Concrete Persistence Gateway
+Web Adapter -&gt; Persistence Adapter
+API Adapter -&gt; Persistence Adapter
+</div></code></pre>
+<p>You can find one example of C4 Component Diagram in this <a href="https://crashedmind.github.io/PlantUMLHitchhikersGuide/C4/C4Stdlib.html#component">link</a>.</p>
+<h3 id="project-diagram-versus-c4-component-diagram">Project Diagram versus C4 Component Diagram</h3>
+<p>The project dependency diagram answers:</p>
+<pre class="hljs"><code><div>Which .NET projects reference which other projects?
+</div></code></pre>
+<p>The C4 Component diagram answers:</p>
+<pre class="hljs"><code><div>Which major runtime responsibilities collaborate inside the deployed application?
+</div></code></pre>
+<h1 id="part-3-implementation-class-diagram">Part 3: Implementation Class Diagram</h1>
+<h2 id="task-5-complete-the-w5-uc01-class-diagram">Task 5: Complete the W5-UC01 Class Diagram</h2>
+<p>Copy the supplied initial diagram and complete it to match your implementation.</p>
+<p>Group classes by project.</p>
+<h3 id="domain">Domain</h3>
+<p>Include implemented types such as:</p>
+<ul>
+<li><code>Student</code>, where used.</li>
+<li><code>Enrolment</code>.</li>
+<li><code>EnrolmentStatus</code>.</li>
+</ul>
+<p>Show only implemented properties and relationships relevant to the use case.</p>
+<h3 id="business">Business</h3>
+<p>Include:</p>
+<ul>
+<li><code>IViewStudentEnrolmentsUseCase</code> as the input port.</li>
+<li><code>ViewStudentEnrolmentsUseCase</code>.</li>
+<li>Input DTO.</li>
+<li>Output DTO and item DTO.</li>
+<li><code>IEnrolmentGateway</code> as the output port.</li>
+</ul>
+<h3 id="persistence-adapter">Persistence Adapter</h3>
+<p>Include:</p>
+<ul>
+<li><code>StudentManagementDbContext</code>.</li>
+<li><code>StudentRecord</code>, where used.</li>
+<li><code>EnrolmentRecord</code>.</li>
+<li><code>EfEnrolmentGateway</code>.</li>
+<li><code>EnrolmentPersistenceMapper</code>.</li>
+</ul>
+<h3 id="web-adapter">Web Adapter</h3>
+<p>Include:</p>
+<ul>
+<li><code>StudentsController</code>.</li>
+<li><code>StudentEnrolmentsViewModel</code>.</li>
+<li>Item view model.</li>
+<li>Web mapper.</li>
+<li>Razor view as a boundary or note.</li>
+</ul>
+<h3 id="api-adapter">API Adapter</h3>
+<p>Include:</p>
+<ul>
+<li><code>StudentsApiController</code>.</li>
+<li><code>StudentEnrolmentsResponse</code>.</li>
+<li>Item response.</li>
+<li>API mapper.</li>
+</ul>
+<h3 id="application">Application</h3>
+<p>Include:</p>
+<ul>
+<li><code>Program</code> or another composition-root element.</li>
+<li>Registration extensions only where they exist and are important.</li>
+</ul>
+<p>Show:</p>
+<ul>
+<li>Interface implementation.</li>
+<li>Constructor dependencies.</li>
+<li>Exact asynchronous method signatures.</li>
+<li>Mapper input and output types.</li>
+<li>Implemented collections and multiplicities.</li>
+<li>Composition-root registrations where relevant.</li>
+</ul>
+<p>Do not include generated framework methods or classes that do not exist.</p>
+<h2 id="task-6-review-the-class-diagram-against-the-dependency-rule">Task 6: Review the Class Diagram Against the Dependency Rule</h2>
+<p>Use the diagram and source code to answer:</p>
+<ol>
+<li>Does any Domain class depend on an outer project?</li>
+<li>Does any Business class mention EF Core, SQLite, MVC, or REST types?</li>
+<li>Does Business own both the input port and output port?</li>
+<li>Does the EF gateway implement the Business-owned output port?</li>
+<li>Are Domain entities separate from EF records?</li>
+<li>Are Business DTOs separate from MVC and API models?</li>
+<li>Do Web and API avoid direct Persistence dependencies?</li>
+<li>Does Application construct the runtime graph?</li>
+</ol>
+<p>If source and diagram disagree, correct the source or the diagram before continuing.</p>
+<h1 id="part-4-sequence-diagrams">Part 4: Sequence Diagrams</h1>
+<h2 id="task-7-create-the-mvc-sequence-diagram">Task 7: Create the MVC Sequence Diagram</h2>
+<p>Create a sequence diagram for <code>W5-UC01: View Student Enrolments</code> through MVC</p>
+<p>Use participants matching your source, such as:</p>
+<pre class="hljs"><code><div>College Administrator
+Browser
+StudentsController
+StudentEnrolmentsWebMapper
+IViewStudentEnrolmentsUseCase
+ViewStudentEnrolmentsUseCase
+IEnrolmentGateway
+EfEnrolmentGateway
+EnrolmentPersistenceMapper
+StudentManagementDbContext
+SQLite
+Razor View
+</div></code></pre>
+<p>Show:</p>
+<ol>
+<li>Browser request containing the student number.</li>
+<li>Creation of the Business input DTO.</li>
+<li>Invocation of the input port and use case.</li>
+<li>Invocation of the output port.</li>
+<li>Runtime dispatch to the EF gateway.</li>
+<li>Read-only EF query, optionally ordered for efficiency.</li>
+<li>Mapping from persistence records to Domain entities.</li>
+<li>Business enforcement of earliest-to-latest ordering.</li>
+<li>Mapping from Domain entities to Business output DTOs.</li>
+<li>Mapping from Business output to MVC view model.</li>
+<li>Razor rendering and HTML response.</li>
+</ol>
+<p>Add an <code>alt</code> fragment for:</p>
+<pre class="hljs"><code><div>No Enrolments Found
+</div></code></pre>
+<p>Do not show the Razor view initiating the controller call. The browser sends the request to the controller, and the controller later supplies the view model to the view.</p>
+<h2 id="task-8-create-the-rest-sequence-diagram">Task 8: Create the REST Sequence Diagram</h2>
+<p>Create a sequence diagram for <code>W5-UC01: View Student Enrolments</code> through REST.</p>
+<p>Use participants matching your implementation, such as:</p>
+<pre class="hljs"><code><div>REST Client
+StudentsApiController
+StudentEnrolmentsApiMapper
+IViewStudentEnrolmentsUseCase
+ViewStudentEnrolmentsUseCase
+IEnrolmentGateway
+EfEnrolmentGateway
+EnrolmentPersistenceMapper
+StudentManagementDbContext
+SQLite
+</div></code></pre>
+<p>Show:</p>
+<ol>
+<li>GET request and route value.</li>
+<li>Creation of the same Business input DTO.</li>
+<li>Invocation of the same input port and use case.</li>
+<li>The same output-port and persistence path.</li>
+<li>Business enforcement of chronological ordering.</li>
+<li>Mapping of the Business output to the API response.</li>
+<li>JSON and HTTP response.</li>
+</ol>
+<p>Add an <code>alt</code> fragment for the empty-result flow.</p>
+<p>For the core implementation, show:</p>
+<pre class="hljs"><code><div>200 OK with an empty Enrolments array
+</div></code></pre>
+<p>when no Enrolments match.</p>
+<h1 id="part-5-consistency-review">Part 5: Consistency Review</h1>
+<h2 id="task-9-compare-the-mvc-and-rest-sequences">Task 9: Compare the MVC and REST Sequences</h2>
+<p>Create a short comparison.</p>
+<h3 id="shared">Shared</h3>
+<p>Expected shared elements include:</p>
+<ul>
+<li>Business input-port interface.</li>
+<li>Use-case implementation.</li>
+<li>Input and output DTOs.</li>
+<li><code>IEnrolmentGateway</code>.</li>
+<li><code>EfEnrolmentGateway</code> at runtime.</li>
+<li>Persistence mapper.</li>
+<li><code>StudentManagementDbContext</code>.</li>
+<li>SQLite.</li>
+<li>Domain behaviour.</li>
+<li>Ordering rule.</li>
+</ul>
+<h3 id="adapter-specific">Adapter-Specific</h3>
+<p>Expected differences include:</p>
+<ul>
+<li>Actor or external client.</li>
+<li>MVC controller versus API controller.</li>
+<li>MVC view model versus API response.</li>
+<li>Web mapper versus API mapper.</li>
+<li>Razor rendering versus JSON and HTTP status.</li>
+</ul>
+<p>Explain how the comparison demonstrates UI independence.</p>
+<h2 id="task-10-validate-all-diagrams-against-the-code">Task 10: Validate All Diagrams Against the Code</h2>
+<p>For every diagram element, confirm that it:</p>
+<ul>
+<li>Exists in the source, or</li>
+<li>Is deliberately shown as a grouped component responsibility.</li>
+</ul>
+<p>For every arrow, confirm one of:</p>
+<ul>
+<li>A project reference exists.</li>
+<li>A constructor or method dependency exists.</li>
+<li>An interface implementation exists.</li>
+<li>A runtime call occurs.</li>
+<li>A mapping operation occurs.</li>
+</ul>
+<p>Check exact spelling and casing for:</p>
+<ul>
+<li>Projects.</li>
+<li>Namespaces.</li>
+<li>Classes.</li>
+<li>Interfaces.</li>
+<li>Methods.</li>
+<li>Routes.</li>
+<li>Database technologies.</li>
+</ul>
+<p>Remove copied elements that do not exist in your implementation.</p>
+<h1 id="required-deliverables">Required Deliverables</h1>
+<p>Retain:</p>
+<pre class="hljs"><code><div>week06-project-dependencies.puml
+week06-component-diagram.puml
+week06-implementation-class-diagram.puml
+week06-w5-uc01-mvc-sequence.puml
+week06-w5-uc01-rest-sequence.puml
+</div></code></pre>
+<p><em>You can also store your diagrams inside markdown files.</em></p>
+<p>Rendered diagram images may also be supplied if required by your tutor.</p>
+<h1 id="completion-checklist">Completion Checklist</h1>
+<h2 id="project-and-component-modelling">Project and Component Modelling</h2>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">I created a project dependency diagram.</label></li>
+<li><input type="checkbox" id="checkbox1"><label for="checkbox1">Its arrows match actual project references.</label></li>
+<li><input type="checkbox" id="checkbox2"><label for="checkbox2">I created a C4 Component diagram.</label></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">It shows one ASP.NET Core application boundary.</label></li>
+<li><input type="checkbox" id="checkbox4"><label for="checkbox4">It distinguishes MVC, REST, Business, Domain, Persistence, and SQLite responsibilities.</label></li>
+<li><input type="checkbox" id="checkbox5"><label for="checkbox5">It does not represent the six projects as six deployed containers.</label></li>
+</ul>
+<h2 id="class-modelling">Class Modelling</h2>
+<ul>
+<li><input type="checkbox" id="checkbox6"><label for="checkbox6">I completed the initial class diagram to match my implementation.</label></li>
+<li><input type="checkbox" id="checkbox7"><label for="checkbox7">Classes are grouped by project.</label></li>
+<li><input type="checkbox" id="checkbox8"><label for="checkbox8">Input and output ports belong to Business.</label></li>
+<li><input type="checkbox" id="checkbox9"><label for="checkbox9">Domain and persistence models are separate.</label></li>
+<li><input type="checkbox" id="checkbox10"><label for="checkbox10">Business DTOs and adapter models are separate.</label></li>
+<li><input type="checkbox" id="checkbox11"><label for="checkbox11">Mapper operations match the source code.</label></li>
+<li><input type="checkbox" id="checkbox12"><label for="checkbox12">Asynchronous method signatures are shown accurately.</label></li>
+<li><input type="checkbox" id="checkbox13"><label for="checkbox13">Application composition is represented.</label></li>
+</ul>
+<h2 id="sequence-modelling">Sequence Modelling</h2>
+<ul>
+<li><input type="checkbox" id="checkbox14"><label for="checkbox14">I created MVC and REST sequences for <code>W5-UC01</code>.</label></li>
+<li><input type="checkbox" id="checkbox15"><label for="checkbox15">Both paths invoke the same Business input port.</label></li>
+<li><input type="checkbox" id="checkbox16"><label for="checkbox16">The runtime EF gateway is represented without reversing source dependencies.</label></li>
+<li><input type="checkbox" id="checkbox17"><label for="checkbox17">Persistence mapping is represented.</label></li>
+<li><input type="checkbox" id="checkbox18"><label for="checkbox18">Business chronological ordering is represented.</label></li>
+<li><input type="checkbox" id="checkbox19"><label for="checkbox19">The empty-result alternative is represented.</label></li>
+</ul>
+<h2 id="consistency">Consistency</h2>
+<ul>
+<li><input type="checkbox" id="checkbox20"><label for="checkbox20">Every diagram matches the source code.</label></li>
+<li><input type="checkbox" id="checkbox21"><label for="checkbox21">Runtime flow is not confused with source-code dependency direction.</label></li>
+<li><input type="checkbox" id="checkbox22"><label for="checkbox22">Exact project, class, method, and route names are used.</label></li>
+<li><input type="checkbox" id="checkbox23"><label for="checkbox23">The diagrams show one executable Application host.</label></li>
+</ul>
+<h1 id="extension-tasks">Extension Tasks</h1>
+<h2 id="extension-1-model-w5-uc04">Extension 1: Model W5-UC04</h2>
+<p>Complete this extension only if you implemented the Lab 1 extension:</p>
+<pre class="hljs"><code><div>W5-UC04: Record Research Activity
+</div></code></pre>
+<p>Extend the class diagram and create:</p>
+<pre class="hljs"><code><div>week06-w5-uc04-mvc-sequence.puml
+week06-w5-uc04-rest-sequence.puml
+</div></code></pre>
+<p>Show separate Domain and MongoDB document models, a Business-owned <code>IResearchActivityGateway</code>, runtime MongoDB gateway implementation, validation alternatives, string identifier assignment, creation timestamp assignment, and no persistence call after failed Business validation.</p>
+<h2 id="extension-2-add-a-c4-container-diagram">Extension 2: Add a C4 Container Diagram</h2>
+<p>Show:</p>
+<ul>
+<li>Browser.</li>
+<li>REST client.</li>
+<li><code>PgrStudentManagement.Application</code>.</li>
+<li>SQLite.</li>
+<li>MongoDB only if implemented.</li>
+</ul>
+<p>Treat the six .NET projects as components or assemblies inside one Application container.</p>
+<h2 id="extension-3-create-an-architecture-decision-record">Extension 3: Create an Architecture Decision Record</h2>
+<p>Explain why MVC and REST are separate projects but deployed together.</p>
+<p>Include:</p>
+<ul>
+<li>Context.</li>
+<li>Decision.</li>
+<li>Alternatives.</li>
+<li>Benefits.</li>
+<li>Costs.</li>
+<li>Future consequences.</li>
+</ul>
+<h1 id="optional-challenge">Optional Challenge</h1>
+<p>After completing the five core diagrams, use:</p>
+<pre class="hljs"><code><div>week06-lab2-challenge-task.md
+</div></code></pre>
+<p>to propose either Milestone Management or Academic Supervisor Management within the same architecture.</p>
+<h1 id="reflection-questions">Reflection Questions</h1>
+<ol>
+<li>What is the difference between the project dependency diagram and the C4 Component diagram?</li>
+<li>Why does runtime flow show <code>EfEnrolmentGateway</code> when Business does not reference Persistence?</li>
+<li>Which participants remain the same between MVC and REST?</li>
+<li>Which participants differ, and why?</li>
+<li>How do the diagrams show Domain independence from persistence?</li>
+<li>Why is Application a host rather than a business component?</li>
+<li>Which diagram most clearly exposes a Dependency Rule violation?</li>
+<li>What information would be lost if only one diagram type were created?</li>
+</ol>
+<h1 id="keeping-the-models-for-the-debrief">Keeping the Models for the Debrief</h1>
+<p>Retain all source and rendered diagrams.</p>
+<p>During the debrief, compare your implementation with reference models for:</p>
+<ul>
+<li>Project dependencies.</li>
+<li>C4 Components.</li>
+<li>Implementation classes.</li>
+<li>MVC runtime interaction.</li>
+<li>REST runtime interaction.</li>
+</ul>
+<p>Save a final checkpoint:</p>
+<pre class="hljs"><code><div>git status
+git add .
+git commit -m <span class="hljs-string">&quot;Complete Week 6 architecture modelling&quot;</span>
+</div></code></pre>
+
+</body>
+</html>
