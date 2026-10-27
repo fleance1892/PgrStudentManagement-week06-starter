@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PgrStudentManagement.Adapters.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb7199ce2487e8920423c56eece090481de8fb5c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aaadfefebe7b191617137196ad97912c97f11308")]
 [assembly: System.Reflection.AssemblyProductAttribute("PgrStudentManagement.Adapters.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PgrStudentManagement.Adapters.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
