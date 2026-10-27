@@ -1,0 +1,9 @@
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/obj/Debug/net8.0/PgrStudentManagement.Adapters.Web.csproj.AssemblyReference.cache
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/obj/Debug/net8.0/rpswa.dswa.cache.json
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/obj/Debug/net8.0/PgrStudentManagement.Adapters.Web.GeneratedMSBuildEditorConfig.editorconfig
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/obj/Debug/net8.0/PgrStudentManagement.Adapters.Web.AssemblyInfoInputs.cache
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/obj/Debug/net8.0/PgrStudentManagement.Adapters.Web.AssemblyInfo.cs
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/obj/Debug/net8.0/PgrStudentManagement.Adapters.Web.csproj.CoreCompileInputs.cache
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/obj/Debug/net8.0/PgrStudentManagement.Adapters.Web.RazorAssemblyInfo.cache
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/obj/Debug/net8.0/PgrStudentManagement.Adapters.Web.RazorAssemblyInfo.cs
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Adapters.Web/obj/Debug/net8.0/PgrStudentManagement.Adapters.Web.sourcelink.json
