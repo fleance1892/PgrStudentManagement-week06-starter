@@ -1,0 +1,2 @@
+namespace PgrStudentManagement.Business.Students.ViewStudentEnrolments;
+public record ViewStudentEnrolmentsInput(string StudentNumber);
