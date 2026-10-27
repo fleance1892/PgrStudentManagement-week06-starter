@@ -1,0 +1,12 @@
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/bin/Debug/net10.0/PgrStudentManagement.Domain.deps.json
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/bin/Debug/net10.0/PgrStudentManagement.Domain.dll
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/bin/Debug/net10.0/PgrStudentManagement.Domain.pdb
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/obj/Debug/net10.0/PgrStudentManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/obj/Debug/net10.0/PgrStudentManagement.Domain.AssemblyInfoInputs.cache
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/obj/Debug/net10.0/PgrStudentManagement.Domain.AssemblyInfo.cs
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/obj/Debug/net10.0/PgrStudentManagement.Domain.csproj.CoreCompileInputs.cache
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/obj/Debug/net10.0/PgrStudentManagement.Domain.sourcelink.json
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/obj/Debug/net10.0/PgrStudentManagement.Domain.dll
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/obj/Debug/net10.0/refint/PgrStudentManagement.Domain.dll
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/obj/Debug/net10.0/PgrStudentManagement.Domain.pdb
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Domain/obj/Debug/net10.0/ref/PgrStudentManagement.Domain.dll

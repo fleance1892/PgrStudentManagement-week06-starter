@@ -1,0 +1,16 @@
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/bin/Debug/net10.0/PgrStudentManagement.Business.deps.json
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/bin/Debug/net10.0/PgrStudentManagement.Business.dll
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/bin/Debug/net10.0/PgrStudentManagement.Business.pdb
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/bin/Debug/net10.0/PgrStudentManagement.Domain.dll
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/bin/Debug/net10.0/PgrStudentManagement.Domain.pdb
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/PgrStudentManagement.Business.csproj.AssemblyReference.cache
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/PgrStudentManagement.Business.GeneratedMSBuildEditorConfig.editorconfig
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/PgrStudentManagement.Business.AssemblyInfoInputs.cache
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/PgrStudentManagement.Business.AssemblyInfo.cs
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/PgrStudentManagement.Business.csproj.CoreCompileInputs.cache
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/PgrStudentManagement.Business.sourcelink.json
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/PgrStude.06CEBBF4.Up2Date
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/PgrStudentManagement.Business.dll
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/refint/PgrStudentManagement.Business.dll
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/PgrStudentManagement.Business.pdb
+/Users/niall/Documents/Uni 26-27/Software Architecture and Design/week 6/PgrStudentManagement-week06-starter/PgrStudentManagement.Business/obj/Debug/net10.0/ref/PgrStudentManagement.Business.dll
