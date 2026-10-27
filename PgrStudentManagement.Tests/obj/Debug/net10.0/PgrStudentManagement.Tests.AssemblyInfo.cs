@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PgrStudentManagement.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c887bcff8b44f9ac25d1bb2869352f9e92a4727")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8ff48a19fe0cbb866e268d3e9c7c09635c5b167")]
 [assembly: System.Reflection.AssemblyProductAttribute("PgrStudentManagement.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PgrStudentManagement.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

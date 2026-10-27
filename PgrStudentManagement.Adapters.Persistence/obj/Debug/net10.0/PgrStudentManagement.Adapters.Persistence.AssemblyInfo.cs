@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PgrStudentManagement.Adapters.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9046a7d8e3867336e00e427bf4c0309130d3c8d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8ff48a19fe0cbb866e268d3e9c7c09635c5b167")]
 [assembly: System.Reflection.AssemblyProductAttribute("PgrStudentManagement.Adapters.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PgrStudentManagement.Adapters.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
